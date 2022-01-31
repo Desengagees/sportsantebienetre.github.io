@@ -1,0 +1,25 @@
+{
+  "name": "Sport, Santé & Bien-Être",
+  "short_name": "sportsantebienetre.org",
+  "start_url": "https://sportsantebienetre.org",
+  "display": "standalone",
+  "theme_color": "#737631",
+  "background_color": "#737631",
+  "description": "Spécialiste du sport santé bien-être, des pitchounes aux seniors.",
+  "version": "29.01.2022",
+  "categories": [
+    "fitness",
+    "health",
+    "lifestyle",
+    "medical",
+    "sports"
+  ],
+  "orientation": "any",
+  "screenshots" : [
+    {
+      "src": "/preview.jpg",
+      "sizes": "1200x628",
+      "type": "image/jpg"
+    }
+  ]
+}
