@@ -7,7 +7,7 @@ import { parse as parseHTML } from 'node-html-parser'
 
 marked.setOptions({ gfm: true })
 
-const pageFiles = await readdir('pages')
+const pageFiles = await readdir('docs')
 const meta = JSON.parse(await readFile('manifest.webmanifest', 'utf8'))
 meta.holiday = await readFile('holiday.css', 'utf8')
 const head = (await readFile('head.html', 'utf8'))
@@ -22,7 +22,7 @@ const normalize = str => str
   .replaceAll(' ', '-')
 
 const buildPage = async filename => {
-  const path = join('pages', filename)
+  const path = join('docs', filename)
   const { name, ext } = parse(path)
   if (name === 'README' || ext !== '.md') return []
   const file = await readFile(path, 'utf8')
