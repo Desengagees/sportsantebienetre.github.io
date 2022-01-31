@@ -4,12 +4,14 @@ import { parse, join } from 'path'
 import { readdir, mkdir, readFile, writeFile } from 'fs/promises'
 import { marked } from 'marked'
 import { parse as parseHTML } from 'node-html-parser'
+import CleanCSS from 'clean-css'
 
 marked.setOptions({ gfm: true })
 
 const pageFiles = await readdir('docs')
 const meta = JSON.parse(await readFile('manifest.webmanifest', 'utf8'))
-meta.holiday = await readFile('holiday.css', 'utf8')
+const style = await readFile('holiday.css', 'utf8')
+meta.holiday = new CleanCSS({}).minify(style).styles
 const head = (await readFile('head.html', 'utf8'))
   .replace(/(@[^"@<]+)/g, a => eval(`meta.${a.slice(1)}`))
 

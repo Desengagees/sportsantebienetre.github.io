@@ -11,6 +11,7 @@
     "start": "./dev.sh"
   },
   "dependencies": {
+    "clean-css": "^5.2.4",
     "marked": "^4.0.12",
     "node-html-parser": "^5.2.0"
   }
